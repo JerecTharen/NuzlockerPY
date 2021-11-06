@@ -1,0 +1,1 @@
+Data for the application gets saved here, but should NOT be included in source control.
