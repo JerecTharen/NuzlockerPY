@@ -16,6 +16,7 @@ def testFunc():
 cmdController.RegisterCmd('test', testFunc)
 cmdController.RegisterCmd('add route', routeTracker.AddRoute)
 cmdController.RegisterCmd('find route', routeTracker.FindRoute)
+cmdController.RegisterCmd('list routes', routeTracker.ListRoutes)
 
 
 #Stand handling input
