@@ -12,6 +12,9 @@ class ConsoleCommander:
     def ProcessCommand(self):
         if(self.cmd == 'exit'):
             print('Have a great day!')
+        elif(self.cmd == 'help'):
+            for key in self.cmdDict.keys():
+                print('\n\r' + key + ',')
         else:
             try:
                 self.cmdDict[self.cmd]()
