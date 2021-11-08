@@ -10,6 +10,7 @@ class RouteTracker:
     
     def AddRoute(self):
         routeName = input('What is the route name: ')
+        isDuplicate = self.DetectRoute(routeName)
         if(self.DetectRoute(routeName)):
             print('That route has already been added!')
         else:
@@ -26,7 +27,11 @@ class RouteTracker:
     
     def DetectRoute(self, routeName):
         self.routeList = self.routeDAL.GetRoutesFromJson()
-        return self.routeList.index(routeName) > -1
+        try:
+            self.routeList.index(routeName) > -1
+        except:
+            return False
+        return True
 
     def ListRoutes(self):
         routeListString = 'These routes have been added: \n\r'
