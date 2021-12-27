@@ -2,6 +2,7 @@ class ConsoleCommander:
     cmd = None
     def __init__(self, cmdDict):
         self.cmdDict = cmdDict
+        self.cmd = ''
         self.PromptCommand()
     
     def PromptCommand(self):
@@ -15,6 +16,7 @@ class ConsoleCommander:
         elif(self.cmd == 'help'):
             for key in self.cmdDict.keys():
                 print('\n\r' + key + ',')
+            self.PromptCommand()
         else:
             try:
                 self.cmdDict[self.cmd]()

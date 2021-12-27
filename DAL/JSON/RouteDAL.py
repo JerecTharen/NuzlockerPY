@@ -21,7 +21,6 @@ class RouteDAL:
         fs.write(json.dumps(routesList))
 
     def GetRoutesFromJson(self):
-        print('console log here')
         if(self.IsRoutesJsonCreated()):
             fs = open(self.jsonPath, 'r')
 

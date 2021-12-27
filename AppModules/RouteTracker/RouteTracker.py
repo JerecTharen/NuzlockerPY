@@ -1,4 +1,12 @@
-from DAL.JSON.RouteDAL import RouteDAL
+try:
+    from DAL.JSON.RouteDAL import RouteDAL
+except:
+    #My Ubuntu environment needs this
+    import sys
+    import os
+    os.chdir(os.path.dirname(__file__))
+    sys.path.append(os.getcwd() + '/DAL/JSON')
+    from RouteDAL import RouteDAL
 
 class RouteTracker:
     def __init__(self):
