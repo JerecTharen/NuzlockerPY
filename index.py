@@ -6,10 +6,14 @@ try:
     from CmdController.CmdController import CmdController
     from DAL.JSON.RouteDAL import RouteDAL
     from AppModules.RouteTracker.RouteTracker import RouteTracker
+    from ConsoleHelpers.PrintHelper import PrintHelper
 except:
     #My Ubuntu environment needs this
-    print('This application must be run as \"python ./index.py\" instead of \"python index.py\"')
+    print('The application is being run on a Linux environment.')
+    print('It must be run as \"python ./index.py\" instead of \"python index.py\"')
     os.chdir(os.path.dirname(__file__))
+    sys.path.append(os.getcwd() + '/ConsoleHelpers')
+    from PrintHelper import PrintHelper
     sys.path.append(os.getcwd() + '/ConsoleCommander')
     from ConsoleCommander import ConsoleCommander
     sys.path.append(os.getcwd() + '/CmdController')
@@ -18,12 +22,12 @@ except:
     from RouteDAL import RouteDAL
     sys.path.append(os.getcwd() + '/AppModules/RouteTracker')
     from RouteTracker import RouteTracker
-    print('You are running this application on Linux. All inputs must begin and end with a \" or it will crash.')
+    print('All inputs must begin and end with a \" or it will crash.')
 
 
 
 # pylint: disable=expected
-print('Hello There. Welcome to PokeNucklockerPy!')
+PrintHelper.PrintBanner('Hello There. Welcome to PokeNucklockerPy!')
 cmdController = CmdController()
 routeTracker = RouteTracker()
 
