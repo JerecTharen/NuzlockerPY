@@ -48,5 +48,6 @@ class RouteTracker:
         print(routeListString)
         
     def ResetRoutes(self):
-        self.routeDAL.WriteRoutesToJson([])
+        self.routeList = []
+        self.routeDAL.WriteRoutesToJson(self.routeList)
         print('Routes have been reset.')

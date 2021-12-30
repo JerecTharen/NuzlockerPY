@@ -6,7 +6,7 @@ class ConsoleCommander:
         self.PromptCommand()
     
     def PromptCommand(self):
-        self.cmd = input('Please enter a command: ').lower()
+        self.cmd = input('\nPlease enter a command: ').lower()
         print('You entered - ', self.cmd)
         self.ProcessCommand()
     
