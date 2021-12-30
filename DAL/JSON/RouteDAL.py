@@ -3,7 +3,7 @@ import os
 
 class RouteDAL:
     def __init__(self):
-        self.jsonPath = './Data/Routes.json'
+        self.jsonPath = os.getcwd() + '/../../Data/Routes.json'
     
     def IsRoutesJsonCreated(self):
         try:

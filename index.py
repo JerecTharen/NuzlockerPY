@@ -8,6 +8,7 @@ try:
     from AppModules.RouteTracker.RouteTracker import RouteTracker
 except:
     #My Ubuntu environment needs this
+    print('This application must be run as \"python ./index.py\" instead of \"python index.py\"')
     os.chdir(os.path.dirname(__file__))
     sys.path.append(os.getcwd() + '/ConsoleCommander')
     from ConsoleCommander import ConsoleCommander
@@ -35,9 +36,11 @@ cmdController.RegisterCmd('test', testFunc)
 cmdController.RegisterCmd('add route', routeTracker.AddRoute)
 cmdController.RegisterCmd('find route', routeTracker.FindRoute)
 cmdController.RegisterCmd('list routes', routeTracker.ListRoutes)
+cmdController.RegisterCmd('reset routes', routeTracker.ResetRoutes)
 
 
 #Stand handling input
 consoleCommander = ConsoleCommander(cmdController.GetCmdDict())
+
 
 #this is a test comment

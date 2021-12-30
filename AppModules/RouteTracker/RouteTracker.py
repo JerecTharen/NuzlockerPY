@@ -42,7 +42,11 @@ class RouteTracker:
         return True
 
     def ListRoutes(self):
-        routeListString = 'These routes have been added: \n\r'
+        routeListString = 'These routes have been added: \n'
         for route in self.routeList:
-            routeListString += (route + ',\n\r')
+            routeListString += (route + ',\n')
         print(routeListString)
+        
+    def ResetRoutes(self):
+        self.routeDAL.WriteRoutesToJson([])
+        print('Routes have been reset.')
