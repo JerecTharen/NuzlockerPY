@@ -3,6 +3,19 @@ import os
 
 class RouteDAL:
     def __init__(self):
+        self.isWindows = True
+        try:
+            fs = open('/Data/DataREADME.txt', 'r')
+            fs.close()
+            self.SetWindowsPath()
+        except:
+            self.isWindows = False
+            self.SetLinuxPath()
+
+    def SetWindowsPath(self):
+        self.jsonPath = '/Data/Routes.json'
+    
+    def SetLinuxPath(self):
         self.jsonPath = os.getcwd() + '/../../Data/Routes.json'
     
     def IsRoutesJsonCreated(self):

@@ -6,7 +6,11 @@ class ConsoleCommander:
         self.PromptCommand()
     
     def PromptCommand(self):
-        self.cmd = input('\nPlease enter a command: ').lower()
+        try:
+            self.cmd = input('\nPlease enter a command: ').lower()
+        except:
+            print('You did not enter \" before and after your command. Try again.')
+            self.PromptCommand()
         print('You entered - ', self.cmd)
         self.ProcessCommand()
     

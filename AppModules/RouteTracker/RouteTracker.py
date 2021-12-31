@@ -17,7 +17,7 @@ class RouteTracker:
             self.routeList = []
     
     def AddRoute(self):
-        routeName = input('What is the route name: ')
+        routeName = str(input('What is the route name: '))
         isDuplicate = self.DetectRoute(routeName)
         if(self.DetectRoute(routeName)):
             print('That route has already been added!')
