@@ -8,7 +8,7 @@ class ConsoleCommander:
     def PromptCommand(self):
         try:
             self.cmd = input('\nPlease enter a command: ').lower()
-        except:
+        except NameError:#only applies to linux environment
             print('You did not enter \" before and after your command. Try again.')
             self.PromptCommand()
         print('You entered - ', self.cmd)
@@ -25,6 +25,6 @@ class ConsoleCommander:
             try:
                 self.cmdDict[self.cmd]()
                 self.PromptCommand()
-            except:
+            except KeyError:
                 print('Command not recognized. Please try again.')
                 self.PromptCommand()
