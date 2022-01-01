@@ -3,12 +3,13 @@ import os
 
 class RouteDAL:
     def __init__(self):
-        self.isWindows = True
+        self.isWindows = None
         try:
             fs = open('/Data/DataREADME.txt', 'r')
             fs.close()
+            self.isWindows = True
             self.SetWindowsPath()
-        except:
+        except IOError:
             self.isWindows = False
             self.SetLinuxPath()
 

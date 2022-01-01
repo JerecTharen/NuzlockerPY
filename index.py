@@ -7,7 +7,7 @@ try:
     from DAL.JSON.RouteDAL import RouteDAL
     from AppModules.RouteTracker.RouteTracker import RouteTracker
     from ConsoleHelpers.PrintHelper import PrintHelper
-except:
+except ImportError:
     #My Ubuntu environment needs this
     print('The application is being run on a Linux environment.')
     print('It must be run as \"python ./index.py\" instead of \"python index.py\"')
